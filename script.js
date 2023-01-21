@@ -68,7 +68,7 @@ let isAlive = setInterval(() => {
     chicken.classList.add("hidden");
     chickenCounter.insertAdjacentHTML(
       "afterbegin",
-      '<img src="/chick.png" alt="minichick">'
+      '<img src="chick.png" alt="minichick">'
     );
     setTimeout(() => {
       chicken.classList.remove("hidden");
@@ -76,11 +76,11 @@ let isAlive = setInterval(() => {
     chickenCounterFunction();
   }
   if (foxLeft < 60 && foxLeft > 0 && henBottom <= 120) {
-    fox.src = "/fox2.png";
+    fox.src = "fox2.png";
     foot.style.animation = "none";
     fox.style.left = "50px";
     hen.style.bottom = "110px";
-    hen.src = "/henx.png";
+    hen.src = "henx.png";
     foot.style.display = "none";
     blur.style.animation = "none";
     chicken.style.display = "none";

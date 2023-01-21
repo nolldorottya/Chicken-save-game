@@ -41,7 +41,7 @@ img {
 .blur {
   width: 100%;
   height: 100%;
-  background-image: url(/back.jpg);
+  background-image: url(back.jpg);
   background-repeat: repeat;
   background-size: cover;
   animation: animatedBackground 100s infinite linear;
@@ -121,7 +121,7 @@ img {
   bottom: 0;
   width: 100%;
   height: 160px;
-  background-image: url(/ground.png);
+  background-image: url(ground.png);
   background-size: cover;
   border-radius: 0 0 10px 10px;
   background-position: bottom;
@@ -141,7 +141,7 @@ img {
   bottom: 60px;
   left: 20px;
   z-index: 2;
-  background-image: url(/foot1.png);
+  background-image: url(foot1.png);
   background-size: cover;
   animation: foot 0.5s infinite;
 }
@@ -259,18 +259,18 @@ img {
 
 @keyframes foot {
   0% {
-    background-image: url(/foot1.png);
+    background-image: url(foot1.png);
   }
   25% {
-    background-image: url(/foot2.png);
+    background-image: url(foot2.png);
   }
   50% {
-    background-image: url(/foot3.png);
+    background-image: url(foot3.png);
   }
   75% {
-    background-image: url(/foot2.png);
+    background-image: url(foot2.png);
   }
   100% {
-    background-image: url(/foot1.png);
+    background-image: url(foot1.png);
   }
 }
