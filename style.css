@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+  color: rgb(37, 36, 36);
+  gap: 30px;
+}
+img {
+  max-width: 100%;
+}
+.title {
+  font-size: 3rem;
+}
+.title span {
+  color: orangered;
+  font-size: 4rem;
+}
+.main {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+}
+.blur {
+  width: 100%;
+  height: 100%;
+  background-image: url(/back.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  animation: animatedBackground 100s infinite linear;
+  filter: blur(2px);
+  border-radius: 10px;
+}
+.chicken {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 60px;
+  z-index: 4;
+  animation-name: rightToLeft;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.cloud {
+  position: absolute;
+  animation: rightToLeftClouds 10s infinite linear;
+}
+.cloud1 {
+  width: 70%;
+  top: 20px;
+}
+.cloud2 {
+  width: 50%;
+  animation-delay: 5s;
+  animation-fill-mode: backwards;
+  top: 30px;
+}
+.score {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.scoreChicken {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.scoreCounter {
+  background-color: white;
+  border-radius: 5px;
+  width: 120px;
+  text-align: center;
+  padding: 15px 0;
+  height: 60px;
+}
+.chickenCounter {
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+}
+.chickenCounter img {
+  width: 30px;
+}
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  background-image: url(/ground.png);
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.hen {
+  width: 100px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  z-index: 2;
+}
+.foot {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  z-index: 2;
+  background-image: url(/foot1.png);
+  background-size: cover;
+  animation: foot 0.5s infinite;
+}
+.animation {
+  animation: jump 0.6s linear;
+}
+.fox {
+  width: 150px;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  z-index: 1;
+  animation-name: rightToLeft;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.game_over,
+.win {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 400px;
+  background-color: rgb(37, 36, 36);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 5;
+  gap: 20px;
+}
+.win {
+  background-color: #5dd565;
+}
+.win .retry {
+  color: orangered;
+}
+
+.result {
+  font-size: 2rem;
+}
+.retry {
+  font-size: 1.8rem;
+  cursor: pointer;
+  width: 120px;
+  padding: 10px;
+  font-family: "Roboto Mono", monospace;
+  color: rgb(37, 36, 36);
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
+}
+.hidden {
+  display: none;
+}
+.gif {
+  width: 140px;
+}
+@keyframes rightToLeft {
+  from {
+    right: 0;
+    opacity: 100;
+  }
+  to {
+    right: 100%;
+  }
+}
+@keyframes rightToLeftClouds {
+  0% {
+    right: -50%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 100;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  50% {
+    bottom: 250px;
+  }
+  100% {
+    bottom: 60px;
+  }
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-size: cover;
+    background-position-x: -10000px;
+  }
+
+  100% {
+    background-size: cover;
+    background-position: right;
+  }
+}
+
+@keyframes foot {
+  0% {
+    background-image: url(/foot1.png);
+  }
+  25% {
+    background-image: url(/foot2.png);
+  }
+  50% {
+    background-image: url(/foot3.png);
+  }
+  75% {
+    background-image: url(/foot2.png);
+  }
+  100% {
+    background-image: url(/foot1.png);
+  }
+}
